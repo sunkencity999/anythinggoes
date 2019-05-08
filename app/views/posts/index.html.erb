@@ -1,0 +1,12 @@
+<h1>Nandemoari Gakko</h1>
+<h2>なんでもあり学校 </h2>
+<h3>Anything Goes School of Martial Arts!</h3>
+<% @posts.each do |post| %>
+<div class="media">
+     <div class="media-body">
+       <h4 class="media-heading">
+         <%= link_to post.title, post %>
+       </h4>
+     </div>
+   </div>
+<% end %>

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'about' => 'home#about'
   get 'contact' => 'home#contact'
   
-  root 'welcome#index'
+  root 'home#index'
 
 
 end

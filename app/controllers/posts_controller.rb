@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  before_action :authenticate_user!, except: :show
+
   def index
   @posts = Post.all
   end
@@ -15,6 +18,7 @@ class PostsController < ApplicationController
     @post = Post.new
     @post.title = params[:post][:title] 
     @post.body = params[:post][:body]
+    @post.user = current_user
 
      if @post.save
        flash[:notice] = "Post was saved."

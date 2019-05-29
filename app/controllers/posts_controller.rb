@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   before_action :authenticate_user!, except: :show
+  before_action :authorize_user, except: [:index, :show]
 
   def index
   @posts = Post.all
@@ -58,4 +59,13 @@ class PostsController < ApplicationController
        render :show
      end
    end
+
+  private 
+
+  def authorize_user
+    unless current_user.admin?
+      flash[:alert] = "You must be an administrator to do that."
+      redirect_to posts_path
+    end
+  end
 end

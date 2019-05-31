@@ -10,13 +10,27 @@
 
   <body>
     <div class="container">
-      <ul class="nav nav-tabs">
+      <ul class="nav nav-tabs" id="mainNav" >
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "About", about_path %></li>
         <li><%= link_to "Contact", contact_path %></li>
+        <li><%= link_to "Blog", posts_path %></li>
 
-      </ul>
       
+
+	<div class="pull-right user-info">
+         <% if current_user %>
+           <li class="pull-right"> <%= "#{current_user.email}" %>&nbsp;&nbsp;</li>
+          <li class="pull-right"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>&nbsp;&nbsp;</li>
+          <li class="pull-right"><%= image_tag current_user.avatar_url(48) %>&nbsp;&nbsp;</li>
+           </div>
+         <% else %>
+          <li class="pull-right"><%= link_to "Sign In", new_user_session_path %>&nbsp;&nbsp;</li>
+          <li class="pull-right"><%= link_to "Sign Up", new_user_registration_path %>&nbsp;&nbsp;</li>
+          </div>
+        <% end %>
+      </ul>
+    
         <% if flash[:notice] %>
          <div class="alert alert-success" role="alert">
            <button type="button" class="close" data-dismiss="alert">&times;</button>

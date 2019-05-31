@@ -1,12 +1,31 @@
-<h1>Nandemoari Gakko</h1>
-<h2>なんでもあり学校 </h2>
-<h3>Anything Goes School of Martial Arts!</h3>
-<% @posts.each do |post| %>
-<div class="media">
+<div class="row">
+  <div class="col-md-12">
+   <div id="ctr">
+     <h1>Nandemoari Gakko</h1>
+     <h2>なんでもあり学校 </h2>
+     <h3>Anything Goes School of Martial Arts!</h3>
+   </div>
+      <% @posts.each do |post| %>
+  <div class="media">
      <div class="media-body">
        <h4 class="media-heading">
          <%= link_to post.title, post %>
        </h4>
+       <p> <%= post.body.truncate_words(20) %>
      </div>
-   </div>
+       </div>
 <% end %>
+
+  <div class= "row">
+    <%= will_paginate @posts %>
+  </div>
+
+
+<% if current_user && current_user.admin? %>
+  <div class="col-md-4">
+    <%= link_to "New Post", new_post_path, class: 'btn btn-success' %>
+  </div>
+  </div>
+
+<% end %>
+

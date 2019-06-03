@@ -4,9 +4,13 @@
    <div class="col-md-8">
        <%= image_tag(@post.featured_url) if @post.featured? %>
 
-     <p><%= @post.body %></p>
+     <p><%= markdown(@post.body) %></p>
        <div>
        <h3>Comments</h3>
+         <small> 
+           <h4> Comments can be styled using Markdown. Thank you for participating! </h4>
+         </small>
+
        <%= render @post.comments %>
        </div>
        <% if current_user %>

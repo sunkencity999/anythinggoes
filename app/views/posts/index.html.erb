@@ -14,7 +14,7 @@
        <h3 class="media-heading">
          <%= link_to post.title, post %>
        </h3>
-       <p> <%= post.body.truncate_words(10) %>
+       <p> <%= markdown(post.body.truncate_words(10)) %>
      </div>
        </div>
 <% end %>

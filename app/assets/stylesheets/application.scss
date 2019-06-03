@@ -17,6 +17,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+
 #mainNav a {
   color:#cc5500;
 }
@@ -24,11 +29,18 @@
 #ctr {
   text-align:center;
 }
-
+h1 {
+  color:#536872;
+}
 h2 {
   color:#cc5500;
 }
-
-a {
+h3 {
   color:#383838;
+}
+h4 {
+  color:#cc5500;
+}
+a {
+  color:#536872;
 }

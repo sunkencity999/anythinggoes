@@ -6,6 +6,6 @@
          | <%= link_to "Delete", [@post, comment], method: :delete %>
        <% end %>
      </small>
-     <p><%= comment.body %></p>
+     <p><%= markdown(comment.body) %></p>
    </div>
  </div>

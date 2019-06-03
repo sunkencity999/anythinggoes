@@ -49,7 +49,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'fog-aws'
 gem 'mini_magick'
 gem 'redcarpet', '~> 3.0.0'
-
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

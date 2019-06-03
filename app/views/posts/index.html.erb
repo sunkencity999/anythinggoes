@@ -7,11 +7,14 @@
    </div>
       <% @posts.each do |post| %>
   <div class="media">
+     <div>
+      <%= image_tag post.featured_url(:thumb) if post.featured? %>
+     </div>
      <div class="media-body">
-       <h4 class="media-heading">
+       <h3 class="media-heading">
          <%= link_to post.title, post %>
-       </h4>
-       <p> <%= post.body.truncate_words(20) %>
+       </h3>
+       <p> <%= post.body.truncate_words(10) %>
      </div>
        </div>
 <% end %>

@@ -19,6 +19,7 @@ class PostsController < ApplicationController
     @post = Post.new
     @post.title = params[:post][:title] 
     @post.body = params[:post][:body]
+    @post.featured = params[:post][:featured]
     @post.user = current_user
 
      if @post.save
@@ -38,7 +39,8 @@ class PostsController < ApplicationController
      @post = Post.find(params[:id])
      @post.title = params[:post][:title]
      @post.body = params[:post][:body]
- 
+     @post.featured = params[:post][:featured]
+
      if @post.save
        flash[:notice] = "Post was updated."
        redirect_to @post

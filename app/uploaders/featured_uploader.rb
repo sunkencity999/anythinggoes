@@ -8,7 +8,7 @@ class FeaturedUploader < CarrierWave::Uploader::Base
   # storage :file
  
   include CarrierWave::MiniMagick
- # storage :fog
+  # storage :fog
 
   process resize_to_fit: [800,800]
 

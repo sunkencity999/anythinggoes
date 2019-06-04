@@ -19,6 +19,7 @@ class PostsController < ApplicationController
     @post = Post.new
     @post.title = params[:post][:title] 
     @post.body = params[:post][:body]
+    @post.tags = params[:post][:tags]
     @post.featured = params[:post][:featured]
     @post.user = current_user
 
@@ -39,6 +40,7 @@ class PostsController < ApplicationController
      @post = Post.find(params[:id])
      @post.title = params[:post][:title]
      @post.body = params[:post][:body]
+     @post.tags = params[:post][:tags]
      @post.featured = params[:post][:featured]
 
      if @post.save

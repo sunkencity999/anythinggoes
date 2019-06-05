@@ -5,6 +5,15 @@
      <h2>なんでもあり学校 </h2>
      <h3>Anything Goes School of Martial Arts!</h3>
    </div>
+
+      <div class="form-group">
+        <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: "Search Posts" %>
+         <center><%= submit_tag "Search", class: 'btn btn-success' %></center>
+        <% end %>
+      </div>
+
+
       <% @posts.each do |post| %>
   <div class="media">
      <div>
@@ -18,11 +27,15 @@
      </div>
        </div>
 <% end %>
+  
+  <% if @posts.present? %>
 
   <div class= "row">
     <%= will_paginate @posts %>
   </div>
-
+  <% else %>
+  <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+   <% end %>
 
 <% if current_user && current_user.admin? %>
   <div class="col-md-4">

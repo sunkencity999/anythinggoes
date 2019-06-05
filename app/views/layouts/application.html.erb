@@ -12,14 +12,15 @@
   <body>
     <div class="container">
       <ul class="nav nav-tabs" id="mainNav" >
+        <img src="https://anythinggoesimages.s3.us-east-2.amazonaws.com/featuredImages/ANYTHING_GOES.jpg" alt=" AGSMA Logo " id="logo" />
         <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "About", about_path %></li>
+         <li><%= link_to "Blog", posts_path %></li>
         <li><%= link_to "Contact", contact_path %></li>
-        <li><%= link_to "Blog", posts_path %></li>
+       
 
       
 
-	<div class="pull-right user-info">
+	<div class="pull-right user-info" id="userInfo">
          <% if current_user %>
            <li class="pull-right"> <%= "#{current_user.email}" %>&nbsp;&nbsp;</li>
           <li class="pull-right"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>&nbsp;&nbsp;</li>

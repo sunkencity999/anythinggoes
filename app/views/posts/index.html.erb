@@ -9,7 +9,9 @@
       <div class="form-group">
         <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
         <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: "Search Posts" %>
-         <center><%= submit_tag "Search", class: 'btn btn-success' %></center>
+        <div>
+          <p> <center><%= submit_tag "Search", class: 'btn btn-success' %></center></p>
+        </div>
         <% end %>
       </div>
 
@@ -17,7 +19,7 @@
       <% @posts.each do |post| %>
   <div class="media">
      <div>
-      <%= image_tag post.featured_url(:thumb) if post.featured? %>
+      <%= image_tag(post.featured_url(:thumb), :class => "imageBox") if post.featured? %>
      </div>
      <div class="media-body">
        <h3 class="media-heading">

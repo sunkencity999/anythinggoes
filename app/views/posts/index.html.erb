@@ -19,7 +19,7 @@
       <% @posts.each do |post| %>
   <div class="media">
      <div>
-      <%= image_tag(post.featured_url(:thumb), :class => "imageBox") if post.featured? %>
+      <p> <%= image_tag(post.featured_url(:thumb), :class => "imageBox") if post.featured? %></p>
      </div>
      <div class="media-body">
        <h3 class="media-heading">
@@ -28,6 +28,7 @@
        <p> <%= markdown(post.body.truncate_words(10)) %>
      </div>
        </div>
+       <hr>
 <% end %>
   
   <% if @posts.present? %>
@@ -37,6 +38,7 @@
   </div>
   <% else %>
   <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+   <%= link_to "Back to Posts", posts_path %>
    <% end %>
 
 <% if current_user && current_user.admin? %>

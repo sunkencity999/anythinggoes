@@ -1,2 +1,71 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="row">
+  <div class="col-md-8">
+    <div id="mainContent">
+      <center><h2> Nandemaori Gakko </h2></center>
+      <center><h3>なんでもあり学校</h3></center>
+        <div id="banner"> 
+        <center><h1> The ANYTHING GOES School of Martial Arts! </h1></center>
+        </div> 
+          <h2> We Fight, We Eat, We Rinse & Repeat </h2>
+            <p> We are a martial arts collective that's passisonate about two things -- Fighting and Ramen! 
+            There are so many different styles and approaches to the art of Fighting, which covers dueling,
+            sportive combat, self-defense and ritual combat that it's near impossible to gain a broad understanding
+            of the Way (as Musashi would put it!) without exploring techniques that other people have dedicated themselves
+            to honing. Everyone in time develops a <em> personal </em> style for their fighting art. Some Brazilian Jiu Jitsu 
+            players have a vicious, pressure heavy top-game. Some have a dangerous guard and bottom-game. Some Karateka 
+            specialize in Mawashi-Geri and setting it up to brutal effect. Judoka often have their own Tokui-waza (favorite technique)
+            that is the primary throw they use to defeat an opponenet. Each person has little tweaks and approaches they do over the 
+            years to make that technique a key to the success of their personal style.</p>
+            <p> We encourage folks to share their Special Technique -- their sharpest knife. We explore applications of that technique,
+            how it applies to different body types and situations, and then drill just that single technique so that we have a chance of 
+            adding it to our personal style. We want to open source martial wisdom, one technique at a time. </p>
+         <h2> Our Method </h2> 
+	    <p> Each event we hold, we have One instructor, one Yoshimitsu of a particular technique. We aim to get in, during the event,
+            one hundred repetitions if it's a grappling technique and five hundred repititions if it's a striking technique. Oftentimes at
+            seminars folks try and teach many techniques, and attendees end up leaving with one. We want to make out time count, and really 
+            add these techniques to our set of real options for our personal styles. </p>
+
+            <p> So, we listen, we drill, we spar and then we eat. Ramen is a perfect post-training food; nearly infinite variety, rich with 
+            good fats and flavors, portable and easy to share with a large family or group of martial artists. Over our bowls of ramen we discuss 
+            what we learned, make deep connections and fill our minds along with our bodies. </p>
+   
+         <h2> Sharing Understanding </h2>
+           <p> In between events, we create podcasts discussing interesting techniques and interviewing martial artists well-known for their skill and 
+           understanding. We create video as well, with instructionals for various techniques and special content for the folks who sponsor us on Patreon. 
+           Our website / blog will commment on day-to-day experiences in the martial arts and with delicious bowls of ramen. Between the regular events,
+           podcasts, blog and video we're making a ton of interesting content for our members. Join us and sponsor us through our Patreon, and help us raise
+           the level of martial skill available to practitioners, and the knowledge and enjoyment of ramen as well!
+        </div>
+     </div>
+  
+
+  <div class="col-md-4"">
+    <div id="sideSection">
+      <h3> Connect with us! </h3>
+        <p> <a href="https://www.patreon.com/anythinggoesgakko" target="_blank"> patreon </a> </p>
+        <p> <a href="https://twitter.com/GoesArts" target="_blank"> twitter </a> </p>
+        <p> <a href="https://www.instagram.com/anythinggoessma/" target="_blank"> instagram </a> </p>
+        <p> <a href="mailto:anythinggoessma@gmail.com" target="_blank"> email </a></p>
+      <hr>
+      <h3> Latest Blog Posts </h3>
+           <% @lastpost.each do |post| %>
+        <div class="media">
+          <div>
+            <p> <%= image_tag(post.featured_url(:thumb), :class => "imageBox") if post.featured? %></p>
+          </div>
+        <div class="media-body">
+           <h3 class="media-heading">
+             <%= link_to post.title, post %>
+           </h3>
+           <p> <%= markdown(post.body.truncate_words(10)) %>
+        </div>
+        </div>
+        <hr>
+            <% end %>
+       
+    </div>
+  </div>
+  </div>
+  <hr>
+  <center><p>&copy;<small> Christopher Bradford, 2019 </small></p> </center>
+</div>

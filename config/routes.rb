@@ -8,7 +8,8 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
 
-  get 'contact' => 'home#contact'
+  #Example for adding static pages later.
+  #get 'contact' => 'home#contact'
   
   root 'home#index'
 

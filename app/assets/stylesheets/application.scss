@@ -86,3 +86,23 @@ background-color: rgba(255, 255, 255, .2);
 height: auto;
 margin: 20px auto 0;
 }
+
+
+@media only screen and (max-width: 768px) {
+
+  body {
+  font-family: 'Roboto Condensed', sans-serif;
+  padding-bottom:10%;
+  padding-right:40px;
+  padding-left:30px;
+  font-size:7vw;
+}
+h2 {
+  color:#cc5500;
+  font-size:7vw;
+}
+h3 {
+  color:#383838;
+  font-size:7vw;
+}
+}

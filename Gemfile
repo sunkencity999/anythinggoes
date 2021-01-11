@@ -49,7 +49,7 @@ gem 'carrierwave'
 
 gem 'fog-aws'
 gem 'mini_magick'
-gem 'redcarpet', '~> 3.0.0'
+gem 'redcarpet', '~> 3.5.1'
 gem 'figaro'
 
 group :development, :test do
